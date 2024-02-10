@@ -3,6 +3,8 @@
 unvt/nanban(国連ベクトルタイルツールキット)でTippecanoeを使用して作成。  
 
 ## デモ
+[Mapbox GL JSで地理院地図Vector風の地図を表示するサンプル](hhttps://github.com/gsi-cyberjapan/gsivectortile-mapbox-gl-js)の泡色地図を利用。  
+
 
 ## 元データ  
 国土数値情報(国土交通省)にて公開されている各データのgeojsonファイルを加工して作成。  
