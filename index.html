@@ -6,6 +6,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/pmtiles@3.0.3/dist/pmtiles.js"></script>
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -21,6 +22,38 @@ const map = new maplibregl.Map({
     zoom: 10, 
     maxZoom: 4, 
     maxZoom: 17,
+});
+
+let protocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+map.on('load', () => {
+    map.addSource("tokei-tochigi", {
+        type: "vector",
+        url: "pmtiles://" + 'https://magn01ia.github.io/tokei-pm/pmtiles/tochigi/tokei-tochigi.pmtiles',
+        attribution: '<a href="https://github.com/magn01ia/tokei-pm/tree/main">Github</a>'
+    });
+    map.addLayer({
+        "id": "toshi-outline",
+        "type": "line",
+        "source": "tokei-tochigi",
+        "source-layer": "toshi",
+        "paint": {
+            "line-color": '#4169e1',
+            'line-width': 2
+            //"fill-opacity": 0.5
+        }
+    });
+    map.addLayer({
+        "id": "youto",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "paint": {
+            "fill-color": '#FED900',
+            "fill-opacity": 0.5
+        }
+    });
 });
 map.addControl(new maplibregl.FullscreenControl());
 </script>
