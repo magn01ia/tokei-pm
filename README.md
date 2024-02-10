@@ -2,8 +2,10 @@
 都市計画区域、用途市域等のベクトルタイル(PMtiles版)。  
 unvt/nanban(国連ベクトルタイルツールキット)でTippecanoeを使用して作成。  
 
-## デモ
-[Mapbox GL JSで地理院地図Vector風の地図を表示するサンプル](hhttps://github.com/gsi-cyberjapan/gsivectortile-mapbox-gl-js)の泡色地図を利用。  
+## デモ  
+https://magn01ia.github.io/tokei-pm/  
+背景地図は[Mapbox GL JSで地理院地図Vector風の地図を表示するサンプル](https://github.com/gsi-cyberjapan/gsivectortile-mapbox-gl-js)の泡色地図を利用。  
+
 
 
 ## 元データ  
