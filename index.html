@@ -39,19 +39,108 @@ map.on('load', () => {
         "source": "tokei-tochigi",
         "source-layer": "toshi",
         "paint": {
-            "line-color": '#4169e1',
-            'line-width': 2
-            //"fill-opacity": 0.5
+            "line-color": '#ff00ff ',
+            "line-width": 2,
+            "line-opacity": 0.5,
+            "line-dasharray": [ 4,2 ]
         }
     });
+    //第1種低層住居専用地域
     map.addLayer({
-        "id": "youto",
+        "id": "d1t",
         "type": "fill",
         "source": "tokei-tochigi",
         "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                1
+            ]
+        ],
         "paint": {
-            "fill-color": '#FED900',
+            "fill-color": "#006400 ",
             "fill-opacity": 0.5
+        }
+    });
+    //第２種低層住居専用地域
+    map.addLayer({
+        "id": "d2t",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                2
+            ]
+        ],
+        "paint": {
+            "fill-color": "#7fffd4",
+            "fill-opacity": 0.5
+        }
+    });
+    //第１種中高層住居専用地域
+    map.addLayer({
+        "id": "d1c",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                3
+            ]
+        ],
+        "paint": {
+            "fill-color": "#adff2f ",
+            "fill-opacity": 0.5
+        }
+    });
+    //第2種中高層住居専用地域
+    map.addLayer({
+        "id": "d2c",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                4
+            ]
+        ],
+        "paint": {
+            "fill-color": "#f0e68c",
+            "fill-opacity": 0.5
+        }
+    });
+    map.addLayer({
+        "id": "label",
+        "type": "symbol",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "layout": {
+            "symbol-placement": "point",
+            "text-field": ["get" , "A29_005"],
+            "text-font": ["Open Sans Regular"],
+            "text-size": 13,
+            "text-offset": [0, 2.0],
+            "text-allow-overlap": false,
+            "text-ignore-placement": false,
+            "text-max-width": 20
+        },
+        "paint": {
+            "text-color": "#000000 ",
+            "text-halo-blur": 1,
+            "text-halo-color": "#ffffff",  
+            "text-halo-width": 2
         }
     });
 });
