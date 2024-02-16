@@ -121,6 +121,196 @@ map.on('load', () => {
             "fill-opacity": 0.5
         }
     });
+    //第1種住居地域
+    map.addLayer({
+        "id": "d1j",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                5
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(255,255,102)",
+            "fill-opacity": 0.5
+        }
+    });
+    //第2種住居地域
+    map.addLayer({
+        "id": "d2j",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                6
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(255,204,153)",
+            "fill-opacity": 0.5
+        }
+    });
+    //準住居地域
+    map.addLayer({
+        "id": "jj",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                7
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(255,204,102)",
+            "fill-opacity": 0.5
+        }
+    });
+    //近隣商業地域
+    map.addLayer({
+        "id": "ks",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                8
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(255,102,204)",
+            "fill-opacity": 0.5
+        }
+    });
+    //商業地域
+    map.addLayer({
+        "id": "sg",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                9
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(255,0,102)",
+            "fill-opacity": 0.5
+        }
+    });
+    //準工業地域
+    map.addLayer({
+        "id": "jk",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                10
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(153,0,255)",
+            "fill-opacity": 0.5
+        }
+    });
+    //工業地域
+    map.addLayer({
+        "id": "kg",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                11
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(204,255,255)",
+            "fill-opacity": 0.5
+        }
+    });
+    //工業専用地域
+    map.addLayer({
+        "id": "kgs",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                12
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(51,204,255)",
+            "fill-opacity": 0.5
+        }
+    });
+    //田園住居地域
+    map.addLayer({
+        "id": "dj",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                21
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(196,215,155)",
+            "fill-opacity": 0.5
+        }
+    });
+    //不明
+    map.addLayer({
+        "id": "unknown",
+        "type": "fill",
+        "source": "tokei-tochigi",
+        "source-layer": "youto",
+        "filter": [
+            "all",
+            [
+                "==",
+                "A29_004",
+                99
+            ]
+        ],
+        "paint": {
+            "fill-color": "rgba(220,220,220)",
+            "fill-opacity": 0.5
+        }
+    });
     map.addLayer({
         "id": "label",
         "type": "symbol",
